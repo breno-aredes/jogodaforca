@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.chooseWord {
+    width: 200px;
+    height: 60px;
+    background-color: #27AE60;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 8px;
+    position: absolute;
+    right: 5%;
+    top: 89px;
+}
+
+.keyboard {
+    background-color: #27AE60;
+    width: 740px;
+    margin-top: 600px;
+}
+
+.chooseLetter {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    border: 1px solid #7AA7C7;
+    color: #39739D;
+    background-color: #E1ECF4;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    margin-left: 12px;
+    margin-bottom: 12px;
+}
+
+.letterAlreadySelected {
+    background-color: #9FAAB5;
+}
+
+.iKnow {
+    background-color: red;
+    width: 630px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 44px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    height: 23px;
+    width: 144px;
+
+}
+
+input {
+    height: 40px;
+    width: 353px;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 5px 0px #00000040;
+}
+
+.kick {
+    height: 40px;
+    width: 100px;
+    border-radius: 3px;
+    background-color: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    color: #3C76A1;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+}
+
+img {
+    width: 400px;
+    position: absolute;
+    top: 59px;
+    left: 38px;
+}

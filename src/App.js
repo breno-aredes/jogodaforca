@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="App">
       <>
-        <h1> jogo da forca</h1>
+        <h1></h1>
       </>
     </div>
   );
