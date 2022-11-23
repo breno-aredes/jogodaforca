@@ -27,8 +27,7 @@ body {
 }
 
 .keyboard {
-    background-color: #27AE60;
-    width: 740px;
+    width: 677px;
     margin-top: 600px;
 }
 
@@ -51,7 +50,6 @@ body {
 }
 
 .iKnow {
-    background-color: red;
     width: 630px;
     display: flex;
     justify-content: space-around;
@@ -74,6 +72,9 @@ input {
     border-radius: 3px;
     border: 1px solid #CCCCCC;
     box-shadow: 2px 2px 5px 0px #00000040;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
 }
 
 .kick {
