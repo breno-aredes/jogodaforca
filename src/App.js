@@ -1,15 +1,15 @@
-import Letras from "./Letras";
+import Kick from "./Chute";
+import Game from "./Jogo";
+import Letters from "./Letras";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <>
-
-        <Letras />
-
+        <Game />
+        <Letters />
+        <Kick />
       </>
     </div>
   );
 }
-
-export default App;
