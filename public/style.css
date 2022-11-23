@@ -26,6 +26,19 @@ body {
     top: 89px;
 }
 
+.randomWord {
+    height: 68px;
+    width: 323px;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: 8px;
+    text-align: center;
+    position: absolute;
+    right: 5%;
+    top: 431px;
+}
+
 .keyboard {
     width: 677px;
     margin-top: 600px;
@@ -94,4 +107,12 @@ img {
     position: absolute;
     top: 59px;
     left: 38px;
+}
+
+.lose {
+    color: #FF0000;
+}
+
+.win {
+    color: #27AE60;
 }
