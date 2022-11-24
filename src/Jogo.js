@@ -1,4 +1,7 @@
 // (imagem da forca, botão de iniciar, palavra do jogo)
+import palavras from "./palavras";
+
+const randomWord = palavras[Math.floor(Math.random() * palavras.length)]
 
 export default function Game() {
 
