@@ -4,15 +4,14 @@ import palavras from "./palavras";
 //pega uma palavra aleatoria e transforma em lista
 const randomWord = palavras[Math.floor(Math.random() * palavras.length)].split('')
 
-export default function Game() {
-
-
+export default function Game(props) {
+    alert(props.sel)
     return (
         <>
             <img src="img/forca0.png" alt="" />
             <button class="chooseWord">Sortear Palavra</button>
             <div className="randomWord">
-                {randomWord.map((p) => `${p}`)}
+                {randomWord.map((p) => `_${p}`)}
             </div>
         </>
     )
