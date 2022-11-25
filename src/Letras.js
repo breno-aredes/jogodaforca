@@ -9,8 +9,8 @@ export default function Letters(props) {
         <>
             {alphabet.map((l) =>
                 <button onClick={() => clicked(l)}
-                    className={`chooseLetter ${props.sel.includes(l) ? "letterAlreadySelected" : ""} `}
-                    disabled={props.sel.includes(l)}
+                    className={`chooseLetter ${props.block} ${props.sel.includes(l) ? "letterAlreadySelected" : ""} `}
+                    disabled={props.sel.includes(l) || props.block == "letterAlreadySelected"}
                 >{l}</button >
             )}
         </>
@@ -18,6 +18,6 @@ export default function Letters(props) {
 
     function clicked(l) {
         props.setsel([...props.sel, l])
-
+        alert(props.sel)
     }
 }
