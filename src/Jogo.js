@@ -1,6 +1,5 @@
 // (imagem da forca, botão de iniciar, palavra do jogo)
 import palavras from "./palavras";
-import { useState } from "react";
 
 const img = [
     'img/forca0.png',
@@ -11,28 +10,30 @@ const img = [
     'img/forca5.png',
     'img/forca6.png',
 ]
-let contador = 0
+let random = []
 
 export default function Game(props) {
 
-    const [clicked, setClicked] = useState([])
+    const { sel, setsel, setBlock, clicked, setClicked, errorCounter } = props;
 
     return (
         <>
-            <img src="img/forca0.png" alt="" />
+            <img src={img[errorCounter]} alt="" />
             <button class="chooseWord" onClick={randomWord}>Escolher Palavra</button>
             <div className="randomWord">
                 {!clicked ? '' : ''}
-                {clicked.map((p) => `${!props.sel.includes(p) ? "_" : p}${p}`)}
+                {clicked.map((p) => `${!sel.includes(p) ? "_" : p}${p}`)}
             </div>
         </>
     )
 
     function randomWord() {
-        const random = palavras[Math.floor(Math.random() * palavras.length)].split('')
+        random = palavras[Math.floor(Math.random() * palavras.length)].split('')
+        //random = ['b', 'o', 'i'] 
+        //palavra para testes
         setClicked(random)
-        console.log(random)
-        props.block('')
+        setBlock('')
+        setsel([])
     }
 
 }
