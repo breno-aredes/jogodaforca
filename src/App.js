@@ -9,11 +9,11 @@ export default function App() {
   const [blockButton, setBlockButton] = React.useState(['letterAlreadySelected'])
   const [errorCounter, setErrorCounter] = React.useState(0)
   const [winOrLose, setWinOrLose] = React.useState('')
+  const [kickImput, setKickImput] = React.useState('')
 
   function moves(letters) {
 
     if (clicked.filter(s => letters[letters.length - 1] === s).length > 0) {
-
       if (clicked.every(c => letters.includes(c))) {
         setWinOrLose('win')
         setBlockButton('letterAlreadySelected')
@@ -32,6 +32,24 @@ export default function App() {
     }
   }
 
+  function savetext(event) {
+    const kickWord = (event.target.value)
+    setKickImput(kickWord)
+  }
+
+  function kickWinOrLose() {
+    if (kickImput == clicked.join('')) {
+      setWinOrLose('win')
+      setSel(clicked)
+      setBlockButton('letterAlreadySelected')
+    }
+    else {
+      setBlockButton('letterAlreadySelected')
+      setSel(clicked)
+      setWinOrLose('lose')
+    }
+  }
+
 
   return (
     <div className="App">
@@ -44,7 +62,7 @@ export default function App() {
           <Letters sel={sel} block={blockButton} setSel={setSel} moves={moves} />
         </div>
 
-        <Kick />
+        <Kick savetext={savetext} kickWinOrLose={kickWinOrLose} />
       </>
     </div>
   );

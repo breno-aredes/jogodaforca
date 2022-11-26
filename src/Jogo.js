@@ -17,8 +17,8 @@ export default function Game(props) {
     const { sel, setsel, setBlock, clicked, setClicked, errorCounter, winOrLose, setWinOrLose, setErrorCounter } = props;
 
     function randomWord() {
-        random = palavras[Math.floor(Math.random() * palavras.length)].split('')
-        //random = ['b', 'o', 'i']
+        //random = palavras[Math.floor(Math.random() * palavras.length)].split('')
+        random = ['b', 'o', 'i']
         //palavra para testes
         setClicked(random)
         setBlock('')
