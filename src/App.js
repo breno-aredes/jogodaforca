@@ -9,7 +9,8 @@ export default function App() {
   const [blockButton, setBlockButton] = React.useState(['letterAlreadySelected'])
   const [errorCounter, setErrorCounter] = React.useState(0)
   const [winOrLose, setWinOrLose] = React.useState('')
-  const [kickImput, setKickImput] = React.useState('')
+  const [kickInput, setKickInput] = React.useState('')
+  const [disabledIn, setDisabled] = React.useState(true)
 
   function moves(letters) {
 
@@ -34,39 +35,42 @@ export default function App() {
 
   function savetext(event) {
     const kickWord = (event.target.value)
-    setKickImput(kickWord)
+    setKickInput(kickWord)
   }
 
   function kickWinOrLose() {
-    if (kickImput == clicked.join('')) {
+
+    if (kickInput == clicked.join('')) {
       setWinOrLose('win')
       setSel(clicked)
       setBlockButton('letterAlreadySelected')
+      setKickInput('')
+      setDisabled(true)
     }
     else {
       setBlockButton('letterAlreadySelected')
       setSel(clicked)
       setWinOrLose('lose')
+      setKickInput('')
+      setDisabled(true)
+      setErrorCounter(6)
     }
   }
-
 
   return (
     <div className="App">
       <>
         <Game sel={sel} setsel={setSel} setBlock={setBlockButton} clicked={clicked} setClicked={setClicked}
           errorCounter={errorCounter} setErrorCounter={setErrorCounter} winOrLose={winOrLose} setWinOrLose={setWinOrLose}
-        />
+          setDisabled={setDisabled} />
 
         <div class="keyboard">
           <Letters sel={sel} block={blockButton} setSel={setSel} moves={moves} />
         </div>
 
-        <Kick savetext={savetext} kickWinOrLose={kickWinOrLose} />
+        <Kick savetext={savetext} kickWinOrLose={kickWinOrLose} kickInput={kickInput} disabledIn={disabledIn} />
       </>
     </div>
   );
-
-
 
 }

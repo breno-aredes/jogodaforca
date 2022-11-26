@@ -14,17 +14,16 @@ let random = []
 
 export default function Game(props) {
 
-    const { sel, setsel, setBlock, clicked, setClicked, errorCounter, winOrLose, setWinOrLose, setErrorCounter } = props;
+    const { sel, setsel, setBlock, clicked, setClicked, errorCounter, winOrLose, setWinOrLose, setErrorCounter, setDisabled } = props;
 
     function randomWord() {
-        //random = palavras[Math.floor(Math.random() * palavras.length)].split('')
-        random = ['b', 'o', 'i']
-        //palavra para testes
+        random = palavras[Math.floor(Math.random() * palavras.length)].split('')
         setClicked(random)
         setBlock('')
         setsel([])
         setWinOrLose('')
         setErrorCounter(0)
+        setDisabled(false)
     }
 
     return (
