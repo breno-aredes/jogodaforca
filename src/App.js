@@ -9,11 +9,13 @@ export default function App() {
   const [sel, setSel] = React.useState([])
   const [blockButton, setBlockButton] = React.useState(['letterAlreadySelected'])
   const [errorCounter, setErrorCounter] = React.useState(0)
+  const [winOrLose, setWinOrLose] = React.useState('')
 
   return (
     <div className="App">
       <>
-        <Game sel={sel} setsel={setSel} setBlock={setBlockButton} clicked={clicked} setClicked={setClicked} errorCounter={errorCounter} />
+        <Game sel={sel} setsel={setSel} setBlock={setBlockButton} clicked={clicked} setClicked={setClicked}
+          errorCounter={errorCounter} setErrorCounter={setErrorCounter} winOrLose={winOrLose} setWinOrLose={setWinOrLose} />
 
         <div class="keyboard">
           <Letters sel={sel} setsel={setSel} block={blockButton} moves={moves} />
@@ -26,20 +28,23 @@ export default function App() {
 
 
   function moves() {
-    //logica ainda falha
     //muda a imagem sempre
     //sel não tem o ultimo elemento clicado
 
+    //if (clicked.filter(s => sel[sel.length].includes(s))) { ??????
     if (clicked.every(c => sel.includes(c))) {
-      alert(clicked)
-      alert(sel)
-      alert('Você ganhou')
+      setWinOrLose('win')
+      setBlockButton('letterAlreadySelected')
 
     }
     else {
       setErrorCounter(errorCounter + 1)
+
       if (errorCounter + 1 === 6) {
-        alert('Você pedeu')
+        setBlockButton('letterAlreadySelected')
+        setSel(clicked)
+        setWinOrLose('lose')
+
       }
     }
   }
