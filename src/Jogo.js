@@ -16,17 +16,6 @@ export default function Game(props) {
 
     const { sel, setsel, setBlock, clicked, setClicked, errorCounter, winOrLose, setWinOrLose, setErrorCounter } = props;
 
-    return (
-        <>
-            <img src={img[errorCounter]} alt="" />
-            <button class="chooseWord" onClick={randomWord}>Escolher Palavra</button>
-            <div className={`randomWord ${winOrLose}`}>
-                {!clicked ? '' : ''}
-                {clicked.map((p) => `${!sel.includes(p) ? "_" : p}`)}
-            </div>
-        </>
-    )
-
     function randomWord() {
         random = palavras[Math.floor(Math.random() * palavras.length)].split('')
         //random = ['b', 'o', 'i']
@@ -37,6 +26,17 @@ export default function Game(props) {
         setWinOrLose('')
         setErrorCounter(0)
     }
+
+    return (
+        <>
+            <img src={img[errorCounter]} alt="" />
+            <button class="chooseWord" onClick={randomWord}>Escolher Palavra</button>
+            <div className={`randomWord ${winOrLose}`}>
+                {!clicked ? '' : ''}
+                {clicked.map((p) => `${!sel.includes(p) ? "_" : p}`)}
+            </div>
+        </>
+    )
 
 }
 
