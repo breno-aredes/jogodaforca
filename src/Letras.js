@@ -17,7 +17,7 @@ export default function Letters(props) {
     return (
         <>
             {alphabet.map((l) =>
-                <button onClick={() => clickedLetter(l)}
+                <button data-test="letter" onClick={() => clickedLetter(l)}
                     className={`chooseLetter ${block} ${sel.includes(l) ? "letterAlreadySelected" : ""} `}
                     disabled={sel.includes(l) || block == "letterAlreadySelected"}
                 >{l}</button >

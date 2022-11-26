@@ -64,7 +64,7 @@ export default function App() {
           errorCounter={errorCounter} setErrorCounter={setErrorCounter} winOrLose={winOrLose} setWinOrLose={setWinOrLose}
           setDisabled={setDisabled} />
 
-        <div class="keyboard">
+        <div className="keyboard">
           <Letters sel={sel} block={blockButton} setSel={setSel} moves={moves} />
         </div>
 

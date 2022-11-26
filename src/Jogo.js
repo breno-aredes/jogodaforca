@@ -28,9 +28,9 @@ export default function Game(props) {
 
     return (
         <>
-            <img src={img[errorCounter]} alt="" />
-            <button class="chooseWord" onClick={randomWord}>Escolher Palavra</button>
-            <div className={`randomWord ${winOrLose}`}>
+            <img src={img[errorCounter]} data-test="game-image" alt="" />
+            <button className="chooseWord" onClick={randomWord} data-test="choose-word">Escolher Palavra</button>
+            <div className={`randomWord ${winOrLose}`} data-test="word" data-answer={clicked}>
                 {!clicked ? '' : ''}
                 {clicked.map((p) => `${!sel.includes(p) ? "_" : p}`)}
             </div>
