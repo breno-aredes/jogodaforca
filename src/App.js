@@ -17,18 +17,15 @@ export default function App() {
     if (clicked.filter(s => letters[letters.length - 1] === s).length > 0) {
       if (clicked.every(c => letters.includes(c))) {
         setWinOrLose('win')
-        setBlockButton('letterAlreadySelected')
+        disableButtons()
       }
-
     }
-
     else {
       setErrorCounter(errorCounter + 1)
-
       if (errorCounter + 1 === 6) {
-        setBlockButton('letterAlreadySelected')
-        setSel(clicked)
         setWinOrLose('lose')
+        disableButtons()
+
       }
     }
   }
@@ -42,19 +39,20 @@ export default function App() {
 
     if (kickInput == clicked.join('')) {
       setWinOrLose('win')
-      setSel(clicked)
-      setBlockButton('letterAlreadySelected')
-      setKickInput('')
-      setDisabled(true)
+      disableButtons()
     }
     else {
-      setBlockButton('letterAlreadySelected')
-      setSel(clicked)
       setWinOrLose('lose')
-      setKickInput('')
-      setDisabled(true)
       setErrorCounter(6)
+      disableButtons()
     }
+  }
+
+  function disableButtons() {
+    setBlockButton('letterAlreadySelected')
+    setSel(clicked)
+    setKickInput('')
+    setDisabled(true)
   }
 
   return (
@@ -72,5 +70,4 @@ export default function App() {
       </>
     </div>
   );
-
 }

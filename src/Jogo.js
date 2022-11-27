@@ -18,7 +18,6 @@ export default function Game(props) {
 
     function randomWord() {
         random = palavras[Math.floor(Math.random() * palavras.length)].split('')
-        //random = ['b', 'o', 'i']
         setClicked(random)
         setBlock('')
         setsel([])
